@@ -23,7 +23,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 # defina el servidor para llevar el registro de modelos y artefactos
-mlflow.set_tracking_uri('http://localhost:5000')
+# mlflow.set_tracking_uri('http://localhost:5000')
+mlflow.set_tracking_uri('http://0.0.0.0:8050')
 # registre el experimento
 experiment = mlflow.set_experiment("sklearn-diab")
 
@@ -31,9 +32,9 @@ experiment = mlflow.set_experiment("sklearn-diab")
 # Para ver el resultado de las corridas haga click en Experimentos en el menú izquierdo. 
 with mlflow.start_run(experiment_id=experiment.experiment_id):
     # defina los parámetros del modelo
-    n_estimators = 200 
-    max_depth = 6
-    max_features = 4
+    n_estimators = 180 
+    max_depth = 7
+    max_features = 6
     # Cree el modelo con los parámetros definidos y entrénelo
     rf = RandomForestRegressor(n_estimators = n_estimators, max_depth = max_depth, max_features = max_features)
     rf.fit(X_train, y_train)

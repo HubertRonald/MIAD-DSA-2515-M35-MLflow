@@ -15,6 +15,9 @@ import tensorflow.keras as tk
 from keras import models
 from keras import layers
 
+# configuras el servidor de tracking de MLflow
+mlflow.set_tracking_uri('http://0.0.0.0:8050')
+mlflow.set_experiment("mnist-feedforward")
 
 # Usaremos argparse para pasarle argumentos a las funciones de entrenamiento
 import argparse
@@ -54,7 +57,8 @@ def run_mlflow(run_name="MLflow CE MNIST"):
     run = mlflow.active_run()
     # MLflow asigna un ID al experimento y a la corrida
     experimentID = run.info.experiment_id
-    runID = run.info.run_uuid
+    # runID = run.info.run_uuid
+    runID = run.info.run_id  # antes run_uuid
     # reistro automáticos de las métricas de keras
     mlflow.keras.autolog()
     model = models.Sequential()
