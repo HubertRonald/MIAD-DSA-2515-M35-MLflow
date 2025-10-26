@@ -20,7 +20,7 @@
 
 # Guía de actividad práctica 5: MLflow
 
-Es repositorio se complementó con [**AmazonWebServicesCLI**](https://github.com/HubertRonald/AmazonWebServicesCLI), para lanzar desde un **devcontainer local** una instancia **EC2** en el entorno de **AWS Academy**.  
+Este repositorio se complementó con [**AmazonWebServicesCLI**](https://github.com/HubertRonald/AmazonWebServicesCLI), para lanzar desde un **devcontainer local** una instancia **EC2** en el entorno de **AWS Academy**.  
 
 > Todas las tecnologías utilizadas aquí corresponden a **free editions**.  
 
